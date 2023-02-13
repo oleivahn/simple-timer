@@ -5,10 +5,7 @@ import './App.css'
 
 function App() {
   const [randomInput, setRandomInput] = useState('');
-  const [seconds, setSeconds] = useState(0);
-
-  const renders = useRef(0);
-  const timerId = useRef();
+  const [pageNumber, setPageNumber] = useState(0);
 
   // Just the input
   const handleChange = (e) => {
@@ -16,26 +13,13 @@ function App() {
     renders.current++;
   }
 
-  // TIMER
-  // const startTimer = () => {
-  //   timerId.current = setInterval(() => {
-  //     renders.current++;
-  //     setSeconds(prev => prev + 1); 
-  //   }, 1000);
-  // }
+  const handlePageNumber = () => {
+    setPageNumber(pageNumber + 1);
+  }
 
-  // const pauseTimer = () => {
-  //   clearInterval(timerId.current);
-  //   timerId.current = 0;
-  // }
-
-  // const resetTimer = () => {
-  //   pauseTimer();
-  //   if (seconds) {
-  //     renders.current++;
-  //     setSeconds(0); 
-  //   }
-  // }
+  const resetPageNumber = () => {
+    setPageNumber(0);
+  }
 
   return (
     <div className="App">
@@ -46,17 +30,16 @@ function App() {
         onChange={handleChange}
       />
       <p>{randomInput}</p>
-{/* 
-      <p>Renders: {renders.current}</p>
-      <br /> <br />
 
-      <p>Seconds: {seconds}</p>
-      <button onClick={startTimer}>Start</button>
-      <button onClick={pauseTimer}>Pause</button>
-      <button onClick={resetTimer}>Reset</button> */}
-      <br /> <br />
-      <StopWatch /> 
-      <Timer />
+      <br />
+      <p>page: {pageNumber}</p>
+      <br />
+      {/* <StopWatch />  */}
+      <Timer 
+        handlePageNumber={handlePageNumber} 
+        pageNumber 
+        resetPageNumber={resetPageNumber}
+        />
     </div>
   )
 }

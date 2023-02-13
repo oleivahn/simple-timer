@@ -1,17 +1,27 @@
 import { useState, useRef, useEffect } from 'react'
 
-const Timer = () => {
-  const [seconds, setSeconds] = useState(5);
+const Timer = ({handlePageNumber, pageNumber, resetPageNumber}) => {
+  const [seconds, setSeconds] = useState(3);
   const timerId = useRef();
 
   // Safeguard for the timer
   useEffect(() => {
     if(seconds < 0) {
       resetTimer();
+      handlePageNumber();
+      startTimer();
     }
+  },[seconds]);
+  
+  // TODO: Stop the timer after a set number of rounds
+  // FIXME: This doesnt stop the timer when i need it to
+  // useEffect(() => {
+  //   if(pageNumber < 3) {
+  //   } else {
+  //     resetTimer();
+  //   }
+  // },[pageNumber]);
 
-    // Do something when the timer runs out
-  });
  
   const startTimer = () => {
     if(!timerId.current) {
@@ -29,7 +39,8 @@ const Timer = () => {
   const resetTimer = () => {
     pauseTimer();
     if (seconds) {
-      setSeconds(5); 
+      setSeconds(3); 
+      resetPageNumber();
     }
   }
 
