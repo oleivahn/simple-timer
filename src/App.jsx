@@ -1,29 +1,37 @@
-import { useState, useRef } from 'react'
-import StopWatch from './components/Stopwatch';
-import Timer from './components/Timer';
-import './App.css'
+import { useState, useRef } from "react";
+import StopWatch from "./components/Stopwatch";
+import Timer from "./components/Timer";
+import Questions from "./components/Questions";
+import "./App.css";
+
+import data from "./data/chestAndBack.json";
 
 function App() {
-  const [randomInput, setRandomInput] = useState('');
+  const [randomInput, setRandomInput] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
+  const [finished, setFinished] = useState(false);
 
   // Just the input
   const handleChange = (e) => {
     setRandomInput(e.target.value);
-    renders.current++;
-  }
+  };
 
   const handlePageNumber = () => {
     setPageNumber(pageNumber + 1);
-  }
+  };
 
   const resetPageNumber = () => {
     setPageNumber(0);
-  }
+  };
 
+  const finishedWorkoutHandler = () => {
+    setFinished(true);
+  };
+
+  console.log(data);
   return (
     <div className="App">
-      <input 
+      <input
         type="text"
         value={randomInput}
         placeholder="Random Input"
@@ -32,16 +40,20 @@ function App() {
       <p>{randomInput}</p>
 
       <br />
-      <p>page: {pageNumber}</p>
+      <Questions data={data} pageNumber={pageNumber} />
       <br />
       {/* <StopWatch />  */}
-      <Timer 
-        handlePageNumber={handlePageNumber} 
+      <Timer
+        handlePageNumber={handlePageNumber}
         pageNumber={pageNumber}
         resetPageNumber={resetPageNumber}
-        />
+        finished={finishedWorkoutHandler}
+        roundsToDo={data.length}
+      />
+      {finished && <p>CONGRATSSSS</p>}
+      {finished && <p>{`Summary: ${JSON.stringify(data)}`}</p>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

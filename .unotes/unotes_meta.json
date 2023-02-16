@@ -1,0 +1,34 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "components": {
+          "name": "components",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "data": {
+          "name": "data",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "notes": {
+          "name": "notes",
+          "isOrdered": true,
+          "folders": {},
+          "files": {
+            "TODOs": 0
+          }
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {}
+}
