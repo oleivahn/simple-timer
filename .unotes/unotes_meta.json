@@ -17,17 +17,23 @@
           "isOrdered": true,
           "folders": {},
           "files": {}
-        },
-        "notes": {
-          "name": "notes",
-          "isOrdered": true,
-          "folders": {},
-          "files": {
-            "TODOs": 0
-          }
         }
       },
       "files": {}
+    },
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "notes": {
+      "name": "notes",
+      "isOrdered": true,
+      "folders": {},
+      "files": {
+        "TODOs": 0
+      }
     }
   },
   "files": {}
