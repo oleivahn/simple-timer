@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from "react";
 
 const StopWatch = () => {
   const [seconds, setSeconds] = useState(0);
@@ -10,30 +10,29 @@ const StopWatch = () => {
   //     setSeconds(seconds => seconds + 1);
   //   }, 1000);
   //   return () => clearInterval(timerId.current);
-  // }, []); 
-
+  // }, []);
 
   // Stopwatch timer
   const startTimer = () => {
-    if(!timerId.current) { // if prevents a double trigger
+    if (!timerId.current) {
+      // if prevents a double trigger
       timerId.current = setInterval(() => {
-        setSeconds(prev => prev + 1); 
+        setSeconds((prev) => prev + 1);
       }, 1000);
     }
-  }
+  };
 
   const pauseTimer = () => {
     clearInterval(timerId.current);
     timerId.current = 0;
-  }
+  };
 
   const resetTimer = () => {
     pauseTimer();
     if (seconds) {
-      setSeconds(0); 
+      setSeconds(0);
     }
-  }
-
+  };
 
   return (
     <div>

@@ -1,10 +1,10 @@
-import { useState, useRef } from 'react'
-import StopWatch from './components/Stopwatch';
-import Timer from './components/Timer';
-import './App.css'
+import { useState, useRef } from "react";
+import StopWatch from "./components/Stopwatch";
+import Timer from "./components/Timer";
+import "./App.css";
 
 function App() {
-  const [randomInput, setRandomInput] = useState('');
+  const [randomInput, setRandomInput] = useState("");
   const [seconds, setSeconds] = useState(0);
 
   const renders = useRef(0);
@@ -14,13 +14,13 @@ function App() {
   const handleChange = (e) => {
     setRandomInput(e.target.value);
     renders.current++;
-  }
+  };
 
   // TIMER
   // const startTimer = () => {
   //   timerId.current = setInterval(() => {
   //     renders.current++;
-  //     setSeconds(prev => prev + 1); 
+  //     setSeconds(prev => prev + 1);
   //   }, 1000);
   // }
 
@@ -33,20 +33,20 @@ function App() {
   //   pauseTimer();
   //   if (seconds) {
   //     renders.current++;
-  //     setSeconds(0); 
+  //     setSeconds(0);
   //   }
   // }
 
   return (
     <div className="App">
-      <input 
+      <input
         type="text"
         value={randomInput}
         placeholder="Random Input"
         onChange={handleChange}
       />
       <p>{randomInput}</p>
-{/* 
+      {/* 
       <p>Renders: {renders.current}</p>
       <br /> <br />
 
@@ -55,10 +55,10 @@ function App() {
       <button onClick={pauseTimer}>Pause</button>
       <button onClick={resetTimer}>Reset</button> */}
       <br /> <br />
-      <StopWatch /> 
+      <StopWatch />
       <Timer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
