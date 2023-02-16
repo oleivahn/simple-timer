@@ -37,7 +37,7 @@ function App() {
       {/* <StopWatch />  */}
       <Timer 
         handlePageNumber={handlePageNumber} 
-        pageNumber 
+        pageNumber={pageNumber}
         resetPageNumber={resetPageNumber}
         />
     </div>

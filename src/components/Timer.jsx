@@ -6,12 +6,19 @@ const Timer = ({handlePageNumber, pageNumber, resetPageNumber}) => {
 
   // Safeguard for the timer
   useEffect(() => {
+    if (pageNumber === 3) {
+      pauseTimer();
+      return
+    }
+
     if(seconds < 0) {
       resetTimer();
       handlePageNumber();
       startTimer();
     }
-  },[seconds]);
+  },[seconds, pageNumber]);
+
+  
   
   // TODO: Stop the timer after a set number of rounds
   // FIXME: This doesnt stop the timer when i need it to
@@ -24,6 +31,7 @@ const Timer = ({handlePageNumber, pageNumber, resetPageNumber}) => {
 
  
   const startTimer = () => {
+    
     if(!timerId.current) {
       timerId.current = setInterval(() => {
         setSeconds(prev => prev - 1); 
@@ -48,6 +56,7 @@ const Timer = ({handlePageNumber, pageNumber, resetPageNumber}) => {
   return (
     <div>
       <p>Timer Seconds: {seconds}</p>
+      <p>Rounds: {pageNumber}</p>
       <button onClick={startTimer}>Start</button>
       <button onClick={pauseTimer}>Pause</button>
       <button onClick={resetTimer}>Reset</button>
