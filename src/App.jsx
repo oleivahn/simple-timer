@@ -20,6 +20,17 @@ function App() {
     setPageNumber(pageNumber + 1);
   };
 
+  const stepPageNumber = (direction) => {
+    if (direction === "forward") {
+      setPageNumber(pageNumber + 1);
+      return;
+    }
+    if (direction === "back") {
+      setPageNumber(pageNumber - 1);
+      return;
+    }
+  };
+
   const resetPageNumber = () => {
     setPageNumber(0);
   };
@@ -28,7 +39,7 @@ function App() {
     setFinished(true);
   };
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="App">
       <input
@@ -46,12 +57,13 @@ function App() {
       <Timer
         handlePageNumber={handlePageNumber}
         pageNumber={pageNumber}
+        stepPageNumber={stepPageNumber}
         resetPageNumber={resetPageNumber}
         finished={finishedWorkoutHandler}
         roundsToDo={data.length}
       />
       {finished && <p>CONGRATSSSS</p>}
-      {finished && <p>{`Summary: ${JSON.stringify(data)}`}</p>}
+      {finished && <p>{`Summary: ${JSON.stringify(data[0])}`}</p>}
     </div>
   );
 }

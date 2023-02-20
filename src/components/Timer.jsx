@@ -4,6 +4,7 @@ const Timer = ({
   handlePageNumber,
   pageNumber,
   resetPageNumber,
+  stepPageNumber,
   finished,
   roundsToDo,
 }) => {
@@ -46,13 +47,39 @@ const Timer = ({
     }
   };
 
+  const stepBack = (e) => {
+    console.log(e.target.value);
+    if (pageNumber > 0) {
+      timerId.current && pauseTimer();
+      stepPageNumber(e.target.value);
+      setSeconds(3);
+      startTimer();
+    }
+  };
+
+  const stepForward = (e) => {
+    console.log(e.target.value);
+    if (pageNumber < roundsToDo) {
+      timerId.current && pauseTimer();
+      stepPageNumber(e.target.value);
+      setSeconds(3);
+      startTimer();
+    }
+  };
+
   return (
     <div>
       <p>Timer Seconds: {seconds}</p>
       <p>Rounds: {pageNumber + 1}</p>
+      <button value="back" onClick={stepBack}>
+        Back
+      </button>
       <button onClick={startTimer}>Start</button>
       <button onClick={pauseTimer}>Pause</button>
       <button onClick={resetTimer}>Reset</button>
+      <button value="forward" onClick={stepForward}>
+        Next
+      </button>
     </div>
   );
 };

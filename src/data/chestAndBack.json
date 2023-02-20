@@ -34,5 +34,29 @@
     "typeOfWeight": "Plates",
     "date": "2023-01-03",
     "notes": "Round 2 almost killed me, I need to stop earlier next time..."
+  },
+  {
+    "id": "4",
+    "exercise_id": "3",
+    "user_id": "1",
+    "exercise": "Arm Curls",
+    "sets": "5",
+    "reps": "5",
+    "weight": "45",
+    "typeOfWeight": "Plates",
+    "date": "2023-01-03",
+    "notes": "Round 2 almost killed me, I need to stop earlier next time..."
+  },
+  {
+    "id": "5",
+    "exercise_id": "3",
+    "user_id": "1",
+    "exercise": "Wide Grip Pull Ups",
+    "sets": "5",
+    "reps": "5",
+    "weight": "45",
+    "typeOfWeight": "Plates",
+    "date": "2023-01-03",
+    "notes": "Round 2 almost killed me, I need to stop earlier next time..."
   }
 ]
