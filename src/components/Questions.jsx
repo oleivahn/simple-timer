@@ -7,6 +7,10 @@ const componentName = ({ data, pageNumber }) => {
 
   useEffect(() => {
     setRound(pageNumber);
+    // TODO: Fix the refs
+    // Use forwardRef to pass the ref down to the child component
+    // https://www.youtube.com/watch?v=ScT4ElKd6eo&ab_channel=techsith
+
     // repsRef.current.focus();
 
     // return () => {
