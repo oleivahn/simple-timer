@@ -7,7 +7,6 @@ import "./App.css";
 import data from "./data/chestAndBack.json";
 
 function App() {
-  const [randomInput, setRandomInput] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [finished, setFinished] = useState(false);
 
@@ -33,23 +32,15 @@ function App() {
 
   const resetPageNumber = () => {
     setPageNumber(0);
+    setFinished(false);
   };
 
   const finishedWorkoutHandler = () => {
     setFinished(true);
   };
 
-  // console.log(data);
   return (
     <div className="App">
-      <input
-        type="text"
-        value={randomInput}
-        placeholder="Random Input"
-        onChange={handleChange}
-      />
-      <p>{randomInput}</p>
-
       <br />
       <Questions data={data} pageNumber={pageNumber} />
       <br />

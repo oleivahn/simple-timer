@@ -21,12 +21,6 @@
       },
       "files": {}
     },
-    "public": {
-      "name": "public",
-      "isOrdered": true,
-      "folders": {},
-      "files": {}
-    },
     "notes": {
       "name": "notes",
       "isOrdered": true,
@@ -36,5 +30,7 @@
       }
     }
   },
-  "files": {}
+  "files": {
+    "test": 0
+  }
 }
