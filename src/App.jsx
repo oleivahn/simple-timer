@@ -1,62 +1,46 @@
-import { useState, useRef } from "react";
-import StopWatch from "./components/Stopwatch";
-import Timer from "./components/Timer";
+import { useState } from "react";
+
+import { createTheme, ThemeProvider, CssBaseline, Paper } from "@mui/material";
+import Switch from "@mui/material/Switch";
+import FormControlLabel from "@mui/material/FormControlLabel";
+
 import "./App.css";
 
+import WorkoutPage from "./components/WorkoutPage";
+
 function App() {
-  const [randomInput, setRandomInput] = useState("");
-  const [seconds, setSeconds] = useState(0);
+  const [themeColor, setThemeColor] = useState(true);
 
-  const renders = useRef(0);
-  const timerId = useRef();
-
-  // Just the input
-  const handleChange = (e) => {
-    setRandomInput(e.target.value);
-    renders.current++;
-  };
-
-  // TIMER
-  // const startTimer = () => {
-  //   timerId.current = setInterval(() => {
-  //     renders.current++;
-  //     setSeconds(prev => prev + 1);
-  //   }, 1000);
-  // }
-
-  // const pauseTimer = () => {
-  //   clearInterval(timerId.current);
-  //   timerId.current = 0;
-  // }
-
-  // const resetTimer = () => {
-  //   pauseTimer();
-  //   if (seconds) {
-  //     renders.current++;
-  //     setSeconds(0);
-  //   }
-  // }
+  const theme = createTheme({
+    palette: {
+      mode: themeColor ? "dark" : "light",
+    },
+  });
 
   return (
     <div className="App">
-      <input
-        type="text"
-        value={randomInput}
-        placeholder="Random Input"
-        onChange={handleChange}
-      />
-      <p>{randomInput}</p>
-      {/* 
-      <p>Renders: {renders.current}</p>
-      <br /> <br />
-
-      <p>Seconds: {seconds}</p>
-      <button onClick={startTimer}>Start</button>
-      <button onClick={pauseTimer}>Pause</button>
-      <button onClick={resetTimer}>Reset</button> */}
-      <br /> <br />
-      <StopWatch />
-      <Timer />
+      <ThemeProvider theme={theme}>
+        <CssBaseline enableColorScheme />
+        <div id="theme-bar">
+          <Paper square elevation={3}>
+            <FormControlLabel
+              control={
+                <Switch
+                  id="theme-switch"
+                  checked={themeColor}
+                  color="success"
+                  onClick={() => setThemeColor(!themeColor)}
+                />
+              }
+              label="Theme - [App.jsx]"
+            />
+          </Paper>
+        </div>
+        {/* MAIN APP */}
+        <div className="main-app-container">
+          <WorkoutPage />
+        </div>
+      </ThemeProvider>
     </div>
   );
 }
