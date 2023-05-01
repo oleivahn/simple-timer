@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-import { createTheme, ThemeProvider, CssBaseline, Paper } from "@mui/material";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 
 import "./App.css";
 
+import ThemeBar from "./components/Themebar";
 import WorkoutPage from "./components/WorkoutPage";
 
 function App() {
@@ -21,21 +20,8 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-        <div id="theme-bar">
-          <Paper square elevation={3}>
-            <FormControlLabel
-              control={
-                <Switch
-                  id="theme-switch"
-                  checked={themeColor}
-                  color="success"
-                  onClick={() => setThemeColor(!themeColor)}
-                />
-              }
-              label="Theme - [App.jsx]"
-            />
-          </Paper>
-        </div>
+        <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
+
         {/* MAIN APP */}
         <div className="main-app-container">
           <WorkoutPage />
