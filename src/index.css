@@ -1,7 +1,11 @@
+/*                    MAIN CSS RESET                 */
+/* ================================================== */
+/* ================================================== */
 :root {
-  color-scheme: light dark; /* 9. This sets the default theme based on windows/mac theme */
+  /* 9. This sets the default theme based on windows/mac theme */
+  /* color-scheme: light dark; 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   text-align: center;
 }
@@ -77,3 +81,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
+/*                    FINISHED CSS RESET                     */
+/* ========================================================= */
+/* ========================================================= */
+/* ========================================================= */

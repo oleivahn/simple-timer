@@ -68,13 +68,15 @@ const Timer = ({
   };
 
   return (
-    <div>
+    <div id="workout-container">
       <p>Timer Seconds: {seconds}</p>
       <p>Rounds: {pageNumber + 1}</p>
       <button value="back" onClick={stepBack}>
         Back
       </button>
-      <button onClick={startTimer}>Start</button>
+      <button id="start-button" onClick={startTimer}>
+        Start
+      </button>
       <button onClick={pauseTimer}>Pause</button>
       <button onClick={resetTimer}>Reset</button>
       <button value="forward" onClick={stepForward}>

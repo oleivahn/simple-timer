@@ -1,0 +1,15 @@
+.main-app-container {
+  margin: auto;
+  /* background-color: darkred; */
+  width: 800px;
+  border: 1px solid #242424;
+  min-height: 200px;
+}
+
+#theme-bar {
+  margin: auto;
+  /* background-color: darkred; */
+  /* width: 800px; */
+  /* border: 1px solid #242424; */
+  /* min-height: 200px; */
+}
