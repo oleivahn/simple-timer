@@ -5,7 +5,8 @@
     "tab.activeBackground": "#163255",
 
     // Desc: The background of the sidebar where the icons are
-    "activityBar.background": "#021115",
+    "activityBar.background": "#16191d",
+
     // Desc: Top bar colors
     "titleBar.activeBackground": "#134654",
     "titleBar.activeForeground": "#F7FCFD",
