@@ -1,0 +1,15 @@
+{
+  "workbench.colorCustomizations": {
+    // Desc: The tabs for open files
+    "tab.activeBorder": "#f8832f",
+    "tab.activeBackground": "#163255",
+
+    // Desc: The background of the sidebar where the icons are
+    "activityBar.background": "#021115",
+    // Desc: Top bar colors
+    "titleBar.activeBackground": "#134654",
+    "titleBar.activeForeground": "#F7FCFD",
+    "titleBar.inactiveBackground": "#1e3c44"
+  },
+  "workbench.colorTheme": "GitHub Dark"
+}
