@@ -68,7 +68,7 @@ const Timer = ({
   };
 
   return (
-    <div id="workout-container">
+    <div id="workout-container" style={{ marginTop: "25px" }}>
       <p>Timer Seconds: {seconds}</p>
       <p>Rounds: {pageNumber + 1}</p>
       <button value="back" onClick={stepBack}>

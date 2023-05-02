@@ -24,39 +24,59 @@ const componentName = ({ data, pageNumber }) => {
   return (
     <div className="questions-container">
       <h3>{`Round: ${round + 1}`}</h3>
+
+      {/* Exercise Name */}
       {data[round] && (
         <div>
           <h3>{data[round].exercise}</h3>
         </div>
       )}
-      <div>
+
+      {/* Exercise Form */}
+      <div style={{ marginTop: "25px" }}>
         <div className="form-container">
           {data[round] && (
             <div className="roundContainer">
-              <span>Reps </span>
-              <input
-                ref={repsRef}
-                className="repsInput"
-                placeholder={data[round].sets}
-              ></input>
+              <div className="left-column">
+                <span>Reps </span>
+              </div>
+              <div>
+                <input
+                  ref={repsRef}
+                  className="repsInput"
+                  placeholder={data[round].sets}
+                ></input>
+              </div>
             </div>
           )}
           {data[round] && (
             <div className="roundContainer">
-              <span>Weight </span>
-              <input placeholder={data[round].weight}></input>
+              <div className="left-column">
+                <span>Weight </span>
+              </div>
+              <div>
+                <input placeholder={data[round].weight}></input>
+              </div>
             </div>
           )}
           {data[round] && (
             <div className="roundContainer">
-              <span>Type of Weight </span>
-              <input placeholder={data[round].typeOfWeight}></input>
+              <div className="left-column">
+                <span>Type of Weight </span>
+              </div>
+              <div>
+                <input placeholder={data[round].typeOfWeight}></input>
+              </div>
             </div>
           )}
           {data[round] && (
             <div className="roundContainer">
-              <span>Notes </span>
-              <input placeholder={data[round].notes} />
+              <div className="left-column">
+                <span>Notes </span>
+              </div>
+              <div>
+                <input placeholder={data[round].notes} />
+              </div>
             </div>
           )}
         </div>

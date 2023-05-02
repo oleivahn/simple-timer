@@ -9,11 +9,13 @@ import StopWatch from "./Stopwatch";
 
 const WorkoutPage = () => {
   const [data, setData] = useState({});
+  const [serverResponse, setServerResponse] = useState();
 
   const [pageNumber, setPageNumber] = useState(0);
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
+    // Axios Example
     axios
       .get("http://localhost:5000/api")
       .then(function (response) {
@@ -24,6 +26,21 @@ const WorkoutPage = () => {
         // handle error
         console.log(error);
       });
+
+    // // Fetch Example
+    // fetch("http://localhost:5000/api", {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setData(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
   }, []);
 
   const handlePageNumber = () => {
@@ -50,6 +67,31 @@ const WorkoutPage = () => {
     setFinished(true);
   };
 
+  const finishNowHandler = async (e) => {
+    const testData = {
+      title: "John Doe",
+      body: 30,
+    };
+    console.log("Finish now...", e.target.value);
+
+    // Axios Example
+    axios
+      .post("http://localhost:5000/workout", testData, {
+        "Content-Type": "application/json",
+      })
+      .then(function (response) {
+        console.log("🚀 ~ file: WorkoutPage.jsx:83 ~ response:", response);
+        // handle success
+        setServerResponse(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+
+    setFinished(true);
+  };
+
   return (
     <div>
       {data ? (
@@ -64,9 +106,29 @@ const WorkoutPage = () => {
             finished={finishedWorkoutHandler}
             roundsToDo={data.length}
           />
+          <div style={{ marginTop: "25px" }}>
+            <button onClick={finishNowHandler} value="finish-now">
+              Finish now...
+            </button>
+          </div>
           {finished && <p>CONGRATSSSS</p>}
           {finished && (
-            <p>{`Summary: ${data ? JSON.stringify(data[0]) : null}`}</p>
+            <>
+              <p>{`Summary: ${
+                data
+                  ? JSON.stringify(
+                      `${data[0].id} ${data[0].exercise} ... and all the rest`
+                    )
+                  : null
+              }`}</p>
+              <p
+                style={{ marginTop: "25px", color: "#195d85" }}
+              >{`Server Response coming from Mongoose too: ${
+                serverResponse
+                  ? `${serverResponse.title} and ${serverResponse.body}`
+                  : null
+              }`}</p>
+            </>
           )}
         </>
       ) : (
