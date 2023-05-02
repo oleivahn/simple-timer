@@ -9,9 +9,9 @@
     // Desc: The background of the sidebar where the icons are
     "activityBar.background": "#16191d",
     // Desc: Top bar colors
-    "titleBar.activeBackground": "#680d24",
+    "titleBar.activeBackground": "#185d70",
     "titleBar.activeForeground": "#F7FCFD",
-    "titleBar.inactiveBackground": "#58202e"
+    "titleBar.inactiveBackground": "#1e3c44"
   },
   "workbench.colorTheme": "GitHub Dark"
 }
