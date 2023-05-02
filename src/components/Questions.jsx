@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-// import "./FILE_NAME.css";
+import "./Questions.css";
 
 const componentName = ({ data, pageNumber }) => {
-  const [round, setRound] = useState(0);
+  // FIXME: This is where the console error is coming from
+  console.log("Check here for the index 0 console error");
+  // const [round, setRound] = useState(0);
+  const [round, setRound] = useState();
   const repsRef = useRef();
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const componentName = ({ data, pageNumber }) => {
   }, [pageNumber]);
 
   return (
-    <div>
+    <div className="questions-container">
       <h3>{`Round: ${round + 1}`}</h3>
       {data[round] && (
         <div>
@@ -27,34 +30,36 @@ const componentName = ({ data, pageNumber }) => {
         </div>
       )}
       <div>
-        {data[round] && (
-          <div className="roundContainer">
-            <span>Reps </span>
-            <input
-              ref={repsRef}
-              className="repsInput"
-              placeholder={data[round].sets}
-            ></input>
-          </div>
-        )}
-        {data[round] && (
-          <div className="roundContainer">
-            <span>Weight </span>
-            <input placeholder={data[round].weight}></input>
-          </div>
-        )}
-        {data[round] && (
-          <div className="roundContainer">
-            <span>Type of Weight </span>
-            <input placeholder={data[round].typeOfWeight}></input>
-          </div>
-        )}
-        {data[round] && (
-          <div className="roundContainer">
-            <span>Notes </span>
-            <input placeholder={data[round].notes} />
-          </div>
-        )}
+        <div className="form-container">
+          {data[round] && (
+            <div className="roundContainer">
+              <span>Reps </span>
+              <input
+                ref={repsRef}
+                className="repsInput"
+                placeholder={data[round].sets}
+              ></input>
+            </div>
+          )}
+          {data[round] && (
+            <div className="roundContainer">
+              <span>Weight </span>
+              <input placeholder={data[round].weight}></input>
+            </div>
+          )}
+          {data[round] && (
+            <div className="roundContainer">
+              <span>Type of Weight </span>
+              <input placeholder={data[round].typeOfWeight}></input>
+            </div>
+          )}
+          {data[round] && (
+            <div className="roundContainer">
+              <span>Notes </span>
+              <input placeholder={data[round].notes} />
+            </div>
+          )}
+        </div>
         {/* {data[round] && <div>{`Reps: ${data[round].reps}`}</div>}
       {data[round] && <div>{`Weight: ${data[round].weight}`}</div>}
       {data[round] && (
