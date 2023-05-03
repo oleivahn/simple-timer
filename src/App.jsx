@@ -1,11 +1,13 @@
 import { useState } from "react";
-
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
 import ThemeBar from "./components/Themebar";
 import WorkoutPage from "./components/WorkoutPage";
+import WorkoutSelector from "./components/WorkoutSelector";
+import Endpoints from "./components/Endpoints";
 
 function App() {
   const [themeColor, setThemeColor] = useState(true);
@@ -16,15 +18,30 @@ function App() {
     },
   });
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <WorkoutSelector />,
+    },
+    {
+      path: "/endpoints/",
+      element: <Endpoints />,
+    },
+    {
+      path: "/workout/:id",
+      element: <WorkoutPage />,
+    },
+  ]);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-        <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
 
         {/* MAIN APP */}
         <div className="main-app-container">
-          <WorkoutPage />
+          <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
+          <RouterProvider router={router} />
         </div>
       </ThemeProvider>
     </div>

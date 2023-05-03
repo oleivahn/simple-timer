@@ -4,6 +4,7 @@ import axios from "axios";
 import Timer from "./Timer";
 import Questions from "./Questions";
 import StopWatch from "./Stopwatch";
+import { Link } from "react-router-dom";
 
 // import data from "../data/chestAndBack.json";
 
@@ -67,6 +68,7 @@ const WorkoutPage = () => {
     setFinished(true);
   };
 
+  // Axios POST Example
   const finishNowHandler = async (e) => {
     const testData = {
       title: "John Doe",
@@ -74,7 +76,6 @@ const WorkoutPage = () => {
     };
     console.log("Finish now...", e.target.value);
 
-    // Axios Example
     axios
       .post("http://localhost:5000/workout", testData, {
         "Content-Type": "application/json",
@@ -94,6 +95,9 @@ const WorkoutPage = () => {
 
   return (
     <div>
+      <p>
+        <Link to={`/`}>Home</Link>
+      </p>
       {data ? (
         <>
           <Questions data={data} pageNumber={pageNumber} />

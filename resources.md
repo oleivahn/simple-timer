@@ -1,6 +1,5 @@
 # Resources
 
-
 ### This video covers everything you need to know to start a node server (Web Dev Cody)
 
 `PERFECT EXPLANATION`: How to deal with `CORs` and send a `proper fetch request`
@@ -14,3 +13,6 @@ https://www.youtube.com/watch?v=G\_XyAfcLeqI&t=3920s&ab\_channel=WebDevCody
 Also the syntax seems easier
 
 <br>
+### React Router
+
+https://reactrouter.com/en/main/start/tutorial
