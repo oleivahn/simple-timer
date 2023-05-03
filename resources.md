@@ -16,3 +16,7 @@ Also the syntax seems easier
 ### React Router
 
 https://reactrouter.com/en/main/start/tutorial
+
+Console colors
+https://www.npmjs.com/package/console-log-colors
+`npm i console-log-colors`
