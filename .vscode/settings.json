@@ -9,7 +9,7 @@
     // Desc: The background of the sidebar where the icons are
     "activityBar.background": "#16191d",
     // Desc: Top bar colors
-    "titleBar.activeBackground": "#185d70",
+    "titleBar.activeBackground": "#0c4454",
     "titleBar.activeForeground": "#F7FCFD",
     "titleBar.inactiveBackground": "#1e3c44"
   },
