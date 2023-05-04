@@ -5,10 +5,13 @@ import testData from "../data/chestAndBack.json";
 
 function Endpoints() {
   const [serverResponse, setServerResponse] = useState();
+  const [method, setMethod] = useState();
 
   // Axios POST Example
   const getFromEndpointHandler = async (e) => {
     console.log("Getting data from endpoint...");
+
+    const method = "GET";
 
     axios
       .get("http://localhost:5000/startworkout")
@@ -16,6 +19,7 @@ function Endpoints() {
         console.log("🚀 ~ file: WorkoutPage.jsx:83 ~ response:", response);
         // handle success
         setServerResponse(response.data[0]);
+        setMethod(method);
       })
       .catch(function (error) {
         // handle error
@@ -30,6 +34,8 @@ function Endpoints() {
     );
     console.log("Finish now...", e.target.value);
 
+    const method = "POST";
+
     axios
       .post("http://localhost:5000/workout", testData, {
         "Content-Type": "application/json",
@@ -38,6 +44,7 @@ function Endpoints() {
         console.log("🚀 ~ file: WorkoutPage.jsx:83 ~ response:", response);
         // handle success
         setServerResponse(response.data);
+        setMethod(method);
       })
       .catch(function (error) {
         // handle error
@@ -61,7 +68,7 @@ function Endpoints() {
           Post...
         </button>
         <p style={{ marginTop: "25px", color: "orange" }}>
-          Server Response coming from Mongoose too:{" "}
+          Server Response coming from Mongoose too: {method}
         </p>
         <p style={{ marginTop: "10px", color: "green" }}>{`${
           serverResponse
