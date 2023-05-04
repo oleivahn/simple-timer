@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import testData from "../data/chestAndBack.json";
 
+// TODO: CLEAN UP THIS MESS
 function Endpoints() {
   const [serverResponse, setServerResponse] = useState();
   const [method, setMethod] = useState();
