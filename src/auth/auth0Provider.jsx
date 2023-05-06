@@ -19,6 +19,11 @@ const Auth0ProviderWithHistory = ({ children }) => {
       clientId={clientId}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+        audience: "https://www.simple-workouts-api.com",
+        scope: "read:current_user update:current_user_metadata",
+      }}
     >
       {children}
     </Auth0Provider>

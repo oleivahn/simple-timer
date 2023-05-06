@@ -5,6 +5,7 @@ import Timer from "./Timer";
 import Questions from "./Questions";
 import StopWatch from "./Stopwatch";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 // import data from "../data/chestAndBack.json";
 
@@ -14,6 +15,13 @@ const WorkoutPage = () => {
 
   const [pageNumber, setPageNumber] = useState(0);
   const [finished, setFinished] = useState(false);
+
+  // Authorize user
+  const { getAccessTokenSilently } = useAuth0();
+  // const token = getAccessTokenSilently().then((res) => console.log(res));
+  const token = getAccessTokenSilently().then((res) => console.log(res));
+
+  console.log("token", token);
 
   useEffect(() => {
     // Axios Example

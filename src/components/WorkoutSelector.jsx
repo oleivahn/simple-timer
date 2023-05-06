@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function WorkoutSelector() {
-  const { loginWithRedirect, logout, user, isLoading } = useAuth0();
+  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   return (
     <>
       <div>WorkoutSelector</div>
-      <h4>
+      <h4 style={{ paddingBottom: "20px" }}>
         <Link to={`/`}>Home</Link>
       </h4>
       <h4>
@@ -17,8 +17,8 @@ function WorkoutSelector() {
           Endpoints and examples (Not protected route)
         </Link>
       </h4>
-      {/* TODO: HIDES THESE ROUTES IF NOT LOGGED IN */}
-      {!isLoading && user && (
+      {/* HIDES THESE ROUTES IF NOT LOGGED IN */}
+      {isAuthenticated && (
         <>
           <h4>
             <Link to={`workout/3`}>
