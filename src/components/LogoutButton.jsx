@@ -9,12 +9,12 @@ function LogoutButton() {
   return (
     <>
       {!isLoading && user && (
-        <>
+        <div>
           <button id="login-btn" onClick={() => logout()}>
             Logout
           </button>
-          <p>Status: </p>
-        </>
+          {/* <p>Status: </p> */}
+        </div>
       )}
       {/* <p>Status: {loggedStatus}</p> */}
     </>
