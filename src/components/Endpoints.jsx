@@ -28,6 +28,10 @@ function Endpoints() {
       });
   };
 
+  // Vite .env Example import
+  const test = import.meta.env.VITE_TEST;
+  console.log(test);
+
   const finishNowHandler = async (e) => {
     console.log(
       "🚀 ~ file: Endpoints.jsx:15 ~ finishNowHandler ~ testData:",

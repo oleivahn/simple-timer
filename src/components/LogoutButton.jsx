@@ -36,7 +36,7 @@ function LogoutButton() {
   return (
     <>
       <button id="logout-btn" onClick={handleLogout}>
-        Login
+        Logout
       </button>
       <p>Status: </p>
       {/* <p>Status: {loggedStatus}</p> */}

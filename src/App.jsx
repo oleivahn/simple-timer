@@ -8,6 +8,7 @@ import ThemeBar from "./components/Themebar";
 import WorkoutPage from "./components/WorkoutPage";
 import WorkoutSelector from "./components/WorkoutSelector";
 import Endpoints from "./components/Endpoints";
+import LoginBar from "./components/LoginBar";
 
 function App() {
   const [themeColor, setThemeColor] = useState(true);
@@ -45,6 +46,7 @@ function App() {
         {/* MAIN APP */}
         <div className="main-app-container">
           <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
+          <LoginBar />
           <RouterProvider router={router} />
         </div>
       </ThemeProvider>
