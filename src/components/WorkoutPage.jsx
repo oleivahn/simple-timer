@@ -28,24 +28,25 @@ const WorkoutPage = () => {
       const token = await getAccessTokenSilently();
       console.log("token in useEffect", token);
 
-      try {
-        const accessToken = await getAccessTokenSilently({
-          authorizationParams: {
-            redirect_uri: window.location.origin,
-            audience: `http://localhost:5000/api`,
-            scope: "read:current_user update:current_user_metadata",
-          },
-        });
-      } catch (error) {
-        console.log(error.message);
-        console.error("Error:", error);
-      }
+      // try {
+      //   const accessToken = await getAccessTokenSilently({
+      //     authorizationParams: {
+      //       redirect_uri: window.location.origin,
+      //       audience: `http://localhost:5000/api`,
+      //       scope: "read:current_user update:current_user_metadata",
+      //     },
+      //   });
+      // } catch (error) {
+      //   console.log(error.message);
+      //   console.error("Error:", error);
+      // }
 
       const response = await fetch("http://localhost:5000/api", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
+          scope: "read:current_user update:current_user_metadata",
         },
       });
 
