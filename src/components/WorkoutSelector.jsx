@@ -9,10 +9,19 @@ function WorkoutSelector() {
         <Link to={`/`}>Home</Link>
       </h4>
       <h4>
-        <Link to={`endpoints/`}>Endpoints and examples</Link>
+        <Link to={`endpoints/`}>
+          Endpoints and examples (Not protected route)
+        </Link>
       </h4>
       <h4>
-        <Link to={`workout/3`}>Chest and Back</Link>
+        <Link to={`workout/3`}>
+          Select your dinamic workout (Protected routes)
+        </Link>
+      </h4>
+      <h4>
+        <Link to={`workout`}>
+          Select your workout (Protected routes) --- USE THIS ONE
+        </Link>
       </h4>
     </>
   );
