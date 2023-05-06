@@ -24,17 +24,48 @@ const WorkoutPage = () => {
   console.log("token", token);
 
   useEffect(() => {
-    // Axios Example
-    axios
-      .get("http://localhost:5000/api")
-      .then(function (response) {
-        // handle success
-        setData(response.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
+    const getWorkoutData = async () => {
+      const token = await getAccessTokenSilently();
+      console.log("token in useEffect", token);
+
+      try {
+        const accessToken = await getAccessTokenSilently({
+          authorizationParams: {
+            redirect_uri: window.location.origin,
+            audience: `http://localhost:5000/api`,
+            scope: "read:current_user update:current_user_metadata",
+          },
+        });
+      } catch (error) {
+        console.log(error.message);
+        console.error("Error:", error);
+      }
+
+      const response = await fetch("http://localhost:5000/api", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
       });
+
+      const responseData = await response.json();
+      console.log("responseData", responseData);
+      setData(responseData);
+    };
+    getWorkoutData();
+
+    // Axios WORKING EXAMPLE
+    // axios
+    //   .get("http://localhost:5000/api")
+    //   .then(function (response) {
+    //     // handle success
+    //     setData(response.data);
+    //   })
+    //   .catch(function (error) {
+    //     // handle error
+    //     console.log(error);
+    //   });
 
     // // Fetch Example
     // fetch("http://localhost:5000/api", {
@@ -50,7 +81,7 @@ const WorkoutPage = () => {
     //   .catch((error) => {
     //     console.error("Error:", error);
     //   });
-  }, []);
+  }, [getAccessTokenSilently]);
 
   const handlePageNumber = () => {
     setPageNumber(pageNumber + 1);
