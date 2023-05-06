@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
-  const domain = "omar-tenant.us.auth0.com";
-  const clientId = "JfcwhlEVJmPUXZ0IxZ4kATx7pILvbded";
+  const domain = import.meta.env.VITE_AUTH0_DOMAIN;
+  const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
 
-  const history = useNavigate();
+  // const navigate = useNavigate();
 
   const onRedirectCallback = (appState) => {
-    history.push(appState?.returnTo || window.location.pathname);
+    // navigate.push(appState?.returnTo || window.location.pathname);
+    window.location.replace(appState?.returnTo || window.location.pathname);
   };
 
   return (

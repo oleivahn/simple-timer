@@ -9,6 +9,8 @@ import WorkoutPage from "./components/WorkoutPage";
 import WorkoutSelector from "./components/WorkoutSelector";
 import Endpoints from "./components/Endpoints";
 import LoginBar from "./components/LoginBar";
+import { Auth0Provider } from "@auth0/auth0-react";
+import Auth0ProviderWithHistory from "./auth/auth0Provider";
 
 function App() {
   const [themeColor, setThemeColor] = useState(true);
@@ -44,11 +46,13 @@ function App() {
         <CssBaseline enableColorScheme />
 
         {/* MAIN APP */}
-        <div className="main-app-container">
-          <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
-          <LoginBar />
-          <RouterProvider router={router} />
-        </div>
+        <Auth0ProviderWithHistory>
+          <div className="main-app-container">
+            <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
+            <LoginBar />
+            <RouterProvider router={router} />
+          </div>
+        </Auth0ProviderWithHistory>
       </ThemeProvider>
     </div>
   );

@@ -1,44 +1,21 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import axios from "axios";
 
 function LogoutButton() {
-  const handleLogout = async () => {
-    // const domain = "omar-tenant.us.auth0.com";
-    // const clientId = "Ez2S2FHTHZ8jH1GARW9SMowqPMakYsHA";
-    // const returnTo = "http://localhost:5173/";
-
-    // const response = await fetch(
-    //   `https://${domain}/logout?client_id=${clientId}&returnTo=${returnTo}`,
-    //   {
-    //     redirect: "manual",
-    //   }
-    // );
-
-    // reroute to auth0 login page
-    // window.location.replace(response.url);
-    console.log("Something");
-  };
-  // const handleLogout = async () => {
-  // axios
-  //     .get("http://localhost:5000/", {
-  //       "Content-Type": "application/json",
-  //     })
-  //     .then(function (response) {
-  //       // handle success
-  //       setLoggedStatus(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       // handle error
-  //       console.log(error);
-  //     });
-  // };
+  const { loginWithRedirect, logout, user, isLoading } = useAuth0();
 
   return (
     <>
-      <button id="logout-btn" onClick={handleLogout}>
-        Logout
-      </button>
-      <p>Status: </p>
+      {!isLoading && user && (
+        <>
+          <button id="login-btn" onClick={() => logout()}>
+            Logout
+          </button>
+          <p>Status: </p>
+        </>
+      )}
       {/* <p>Status: {loggedStatus}</p> */}
     </>
   );
