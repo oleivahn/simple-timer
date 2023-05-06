@@ -31,6 +31,10 @@ function App() {
       path: "/workout/:id",
       element: <WorkoutPage />,
     },
+    {
+      path: "/workout/",
+      element: <WorkoutPage />,
+    },
   ]);
 
   return (
