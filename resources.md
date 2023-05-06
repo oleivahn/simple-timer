@@ -20,3 +20,6 @@ https://reactrouter.com/en/main/start/tutorial
 Console colors
 https://www.npmjs.com/package/console-log-colors
 `npm i console-log-colors`
+
+The best Oath2.0 tutorial I've found so far
+\[https://youtu\.be/dyZmsz6usWk\]\(OAuth 2\.0 using Auth0 \- React \- Node\)
