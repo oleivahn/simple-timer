@@ -10,9 +10,16 @@ function LogoutButton() {
     <>
       {!isLoading && user && (
         <div>
-          <button id="login-btn" onClick={() => logout()}>
+          <button
+            id="login-btn"
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin } })
+            }
+          >
             Logout
           </button>
+          <p>Status: {user && JSON.stringify(user)}</p>
+
           {/* <p>Status: </p> */}
         </div>
       )}

@@ -17,7 +17,7 @@ const WorkoutPage = () => {
   const [finished, setFinished] = useState(false);
 
   // Authorize user
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently, user } = useAuth0();
   // const token = getAccessTokenSilently().then((res) => console.log(res));
   const token = getAccessTokenSilently().then((res) => console.log(res));
 

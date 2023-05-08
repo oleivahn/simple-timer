@@ -11,7 +11,7 @@ function LoginButton() {
           <button id="login-btn" onClick={() => loginWithRedirect()}>
             Login
           </button>
-          {/* <p>Status: </p> */}
+          <p>Status: {user}</p>
         </>
       )}
       {/* <p>Status: {loggedStatus}</p> */}
