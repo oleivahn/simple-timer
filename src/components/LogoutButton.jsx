@@ -18,7 +18,8 @@ function LogoutButton() {
           >
             Logout
           </button>
-          <p>Status: {user && JSON.stringify(user)}</p>
+          <p>User: {user && user.name}</p>
+          {/* <p>{user && JSON.stringify(user, null, 2)}</p> */}
 
           {/* <p>Status: </p> */}
         </div>

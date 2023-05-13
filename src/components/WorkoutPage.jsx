@@ -10,6 +10,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 // import data from "../data/chestAndBack.json";
 
 const WorkoutPage = () => {
+  const { getAccessTokenSilently, user } = useAuth0();
   const [data, setData] = useState({});
   const [serverResponse, setServerResponse] = useState();
 
@@ -17,16 +18,12 @@ const WorkoutPage = () => {
   const [finished, setFinished] = useState(false);
 
   // Authorize user
-  const { getAccessTokenSilently, user } = useAuth0();
-  // const token = getAccessTokenSilently().then((res) => console.log(res));
-  const token = getAccessTokenSilently().then((res) => console.log(res));
-
-  console.log("token", token);
 
   useEffect(() => {
     const getWorkoutData = async () => {
-      const token = await getAccessTokenSilently();
+      const token = await getAccessTokenSilently().then((res) => res);
       console.log("token in useEffect", token);
+      console.log("User", await user);
 
       // try {
       //   const accessToken = await getAccessTokenSilently({
@@ -46,7 +43,7 @@ const WorkoutPage = () => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
-          scope: "read:current_user update:current_user_metadata",
+          // scope: "read:current_user update:current_user_metadata",
         },
       });
 
