@@ -22,7 +22,7 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-05-12T23:59:45.678Z",
-    "modified": "2023-05-13T01:11:19.196Z",
+    "modified": "2023-05-13T05:15:05.625Z",
     "headers": [
       {
         "name": "Authorization",
@@ -31,13 +31,13 @@
       },
       {
         "name": "Authorization",
-        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29tYXItdGVuYW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDU0YmZmYTBhZjJkMDU4MmU1YzhjMjQiLCJhdWQiOlsiaHR0cHM6Ly93d3cuc2ltcGxlLXdvcmtvdXRzLWFwaS5jb20iXSwiaWF0IjoxNjgzOTQwMTAzLCJleHAiOjE2ODQwMjY1MDMsImF6cCI6IkpmY3dobEVWSm1QVVhaMEl4WjRrQVR4N3BJTHZiZGVkIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.JpGv5zVX7T4hO7cFVnBY3U0n0Aeod8aO54qeHrbEPbo"
+        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29tYXItdGVuYW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDU0YmZmYTBhZjJkMDU4MmU1YzhjMjQiLCJhdWQiOlsiaHR0cHM6Ly93d3cuc2ltcGxlLXdvcmtvdXRzLWFwaS5jb20iXSwiaWF0IjoxNjgzOTU0ODg0LCJleHAiOjE2ODQwNDEyODQsImF6cCI6IkpmY3dobEVWSm1QVVhaMEl4WjRrQVR4N3BJTHZiZGVkIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbInJlYWQ6Y3VycmVudF91c2VyIiwicmVhZDp3b3Jrb3V0cyIsInVwZGF0ZTpjdXJyZW50X3VzZXJfbWV0YWRhdGEiLCJ3cml0ZTp3b3Jrb3V0cyJdfQ.pcQ4UVEXNcFDd_mckuOgoVzycQI5UvsTHlpYXdYiCR8"
       }
     ],
     "params": [],
     "body": {
-      "type": "json",
-      "raw": "{}",
+      "type": "text",
+      "raw": "CHECK THE ACCESS TOKEN IF YOU GET AN ERROR\n\nLeaving notes for later\n\n",
       "form": []
     },
     "tests": []
