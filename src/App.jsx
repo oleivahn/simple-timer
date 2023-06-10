@@ -32,15 +32,15 @@ function App() {
           element: <Dashboard />,
         },
         {
-          path: "/endpoints/",
+          path: "/dashboard/endpoints/",
           element: <Endpoints />,
         },
         {
-          path: "/workout/:id",
+          path: "/dashboard/workout/:id",
           element: <WorkoutPage />,
         },
         {
-          path: "/workout/",
+          path: "/dashboard/workout/",
           element: <WorkoutPage />,
         },
       ],
