@@ -11,7 +11,7 @@ function Dashboard() {
   return (
     <div className={`${styles.container} ${styles.title}`}>
       {isAuthenticated && (
-        <div className="content">
+        <div className={styles.content}>
           <Typography variant="body1" gutterBottom>
             Welcome to your personal workout tracker. Please login to continue.
           </Typography>
