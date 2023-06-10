@@ -8,7 +8,17 @@ function LoginButton() {
     <>
       {!isLoading && !user && (
         <>
-          <button id="login-btn" onClick={() => loginWithRedirect()}>
+          <button
+            id="login-btn"
+            onClick={() =>
+              loginWithRedirect({
+                screen_hint: "dashboard",
+                appState: {
+                  returnTo: "/dashboard/",
+                },
+              })
+            }
+          >
             Login
           </button>
           <p>Status: {user}</p>

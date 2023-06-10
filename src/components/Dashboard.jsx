@@ -1,31 +1,17 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-
 import { useAuth0 } from "@auth0/auth0-react";
-import Login from "./Login";
-import styles from "./Home.module.css";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
-function Home() {
+import styles from "./Dashboard.module.css";
+
+function Dashboard() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   return (
-    <>
-      <div className={styles.container}>
-        <h4 style={{ paddingBottom: "20px" }}>
-          <Typography variant="h4" gutterBottom>
-            <Link to={`/`}>Home</Link>
-          </Typography>
-        </h4>
-        <Login />
-      </div>
-      <div id="detail">
-        <Outlet />
-      </div>
-      {/* HIDES THESE ROUTES IF NOT LOGGED IN */}
-      {/* {isAuthenticated && (
-        <>
+    <div className={`${styles.container} ${styles.title}`}>
+      {isAuthenticated && (
+        <div className="content">
           <Typography variant="body1" gutterBottom>
             Welcome to your personal workout tracker. Please login to continue.
           </Typography>
@@ -50,10 +36,10 @@ function Home() {
               </Link>
             </Typography>
           </h4>
-        </>
-      )} */}
-    </>
+        </div>
+      )}
+    </div>
   );
 }
 
-export default Home;
+export default Dashboard;

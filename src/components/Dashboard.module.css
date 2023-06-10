@@ -1,0 +1,13 @@
+.container {
+  /* color: "40px"; */
+  border: 1px solid green;
+  height: 100vh;
+}
+
+.title {
+  color: red;
+}
+
+.content {
+  padding-top: "25px";
+}

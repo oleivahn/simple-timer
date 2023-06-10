@@ -6,11 +6,12 @@ import "./App.css";
 
 import ThemeBar from "./components/Themebar";
 import WorkoutPage from "./components/WorkoutPage";
-import WorkoutSelector from "./components/WorkoutSelector";
+import Home from "./components/Home";
 import Endpoints from "./components/Endpoints";
-import LoginBar from "./components/LoginBar";
 import { Auth0Provider } from "@auth0/auth0-react";
 import Auth0ProviderWithHistory from "./auth/auth0Provider";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [themeColor, setThemeColor] = useState(true);
@@ -24,20 +25,38 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <WorkoutSelector />,
+      element: <Home />,
+      children: [
+        {
+          path: "/dashboard/",
+          element: <Dashboard />,
+        },
+        {
+          path: "/endpoints/",
+          element: <Endpoints />,
+        },
+        {
+          path: "/workout/:id",
+          element: <WorkoutPage />,
+        },
+        {
+          path: "/workout/",
+          element: <WorkoutPage />,
+        },
+      ],
     },
-    {
-      path: "/endpoints/",
-      element: <Endpoints />,
-    },
-    {
-      path: "/workout/:id",
-      element: <WorkoutPage />,
-    },
-    {
-      path: "/workout/",
-      element: <WorkoutPage />,
-    },
+    // {
+    //   path: "/endpoints/",
+    //   element: <Endpoints />,
+    // },
+    // {
+    //   path: "/workout/:id",
+    //   element: <WorkoutPage />,
+    // },
+    // {
+    //   path: "/workout/",
+    //   element: <WorkoutPage />,
+    // },
   ]);
 
   return (
@@ -49,7 +68,6 @@ function App() {
         <Auth0ProviderWithHistory>
           <div className="main-app-container">
             <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
-            <LoginBar />
             <RouterProvider router={router} />
           </div>
         </Auth0ProviderWithHistory>
