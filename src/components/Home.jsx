@@ -24,34 +24,13 @@ function Home() {
         <Outlet />
       </div>
       {/* HIDES THESE ROUTES IF NOT LOGGED IN */}
-      {/* {isAuthenticated && (
+      {!isAuthenticated && (
         <>
           <Typography variant="body1" gutterBottom>
             Welcome to your personal workout tracker. Please login to continue.
           </Typography>
-          <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`endpoints/`}>
-                Endpoints and examples (Not protected route)
-              </Link>
-            </Typography>
-          </h4>
-          <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`workout/3`}>
-                Select your dinamic workout (Protected routes)
-              </Link>
-            </Typography>
-          </h4>
-          <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`workout`}>
-                Select your workout (Protected routes) --- USE THIS ONE
-              </Link>
-            </Typography>
-          </h4>
         </>
-      )} */}
+      )}
     </>
   );
 }

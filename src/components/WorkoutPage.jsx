@@ -133,7 +133,7 @@ const WorkoutPage = () => {
   return (
     <div>
       <p>
-        <Link to={`/`}>Home</Link>
+        <Link to={`/dashboard`}>Home</Link>
       </p>
       {data ? (
         <>

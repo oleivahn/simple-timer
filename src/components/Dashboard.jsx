@@ -13,7 +13,7 @@ function Dashboard() {
       {isAuthenticated && (
         <div className={styles.content}>
           <Typography variant="body1" gutterBottom>
-            Welcome to your personal workout tracker. Please login to continue.
+            Logged in!!!
           </Typography>
           <h4>
             <Typography variant="body1" gutterBottom>
