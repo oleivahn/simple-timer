@@ -24,8 +24,8 @@ const componentName = ({ data, pageNumber }) => {
   }, [pageNumber]);
 
   return (
-    <div className="questions-container border-slate-100 border-2 pb-5">
-      <div className="flex gap-5 justify-center pt-5">
+    <div className="questions-container border-2 border-slate-100 pb-5">
+      <div className="flex justify-center gap-5 pt-5">
         <h3>{`Round: ${round + 1}`}</h3>
 
         {/* Exercise Name */}
@@ -74,7 +74,7 @@ const componentName = ({ data, pageNumber }) => {
               <div className="left-column ">
                 <label
                   htmlFor="reps"
-                  className="block text-sm font-medium leading-6 my-3"
+                  className="my-3 block text-sm font-medium leading-6"
                 >
                   Reps
                 </label>
@@ -89,7 +89,7 @@ const componentName = ({ data, pageNumber }) => {
                       type="text"
                       autoComplete="reps"
                       required
-                      className="px-3 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -98,10 +98,10 @@ const componentName = ({ data, pageNumber }) => {
           )}
           {data[round] && (
             <div className="roundContainer">
-              <div className="left-column ">
+              <div className="left-column">
                 <label
                   htmlFor="weight"
-                  className="block text-sm font-medium leading-6 my-3"
+                  className="my-3 block text-sm font-medium leading-6"
                 >
                   Weight
                 </label>
@@ -116,7 +116,7 @@ const componentName = ({ data, pageNumber }) => {
                       type="text"
                       autoComplete="weight"
                       required
-                      className="px-3 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const componentName = ({ data, pageNumber }) => {
               <div className="left-column ">
                 <label
                   htmlFor="typeOfWeight"
-                  className="block text-sm font-medium leading-6 my-3"
+                  className="my-3 block text-sm font-medium leading-6"
                 >
                   Type of Weight
                 </label>
@@ -143,7 +143,7 @@ const componentName = ({ data, pageNumber }) => {
                       type="text"
                       autoComplete="reps"
                       required
-                      className="px-3 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -155,7 +155,7 @@ const componentName = ({ data, pageNumber }) => {
               <div className="left-column ">
                 <label
                   htmlFor="notes"
-                  className="block text-sm font-medium leading-6 my-3"
+                  className="my-3 block text-sm font-medium leading-6"
                 >
                   Notes
                 </label>
@@ -170,7 +170,7 @@ const componentName = ({ data, pageNumber }) => {
                       type="text"
                       autoComplete="notes"
                       required
-                      className="px-3 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
