@@ -69,19 +69,35 @@ const Timer = ({
 
   return (
     <div id="workout-container" style={{ marginTop: "25px" }}>
-      <p>Timer Seconds: {seconds}</p>
-      <p>Rounds: {pageNumber + 1}</p>
-      <button value="back" onClick={stepBack}>
-        Back
-      </button>
-      <button id="start-button" onClick={startTimer}>
-        Start
-      </button>
-      <button onClick={pauseTimer}>Pause</button>
-      <button onClick={resetTimer}>Reset</button>
-      <button value="forward" onClick={stepForward}>
-        Next
-      </button>
+      <div className="flex justify-center gap-40">
+        <p>Timer Seconds: {seconds}</p>
+        <p>Rounds: {pageNumber + 1}</p>
+      </div>
+      <div className="flex gap-2 justify-center mt-3">
+        <button className="btn btn-accent" value="back" onClick={stepBack}>
+          Back
+        </button>
+        <button
+          className="btn btn-accent"
+          id="start-button"
+          onClick={startTimer}
+        >
+          Start
+        </button>
+        <button className="btn btn-accent" onClick={pauseTimer}>
+          Pause
+        </button>
+        <button className="btn btn-accent" onClick={resetTimer}>
+          Reset
+        </button>
+        <button
+          className="btn btn-accent"
+          value="forward"
+          onClick={stepForward}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

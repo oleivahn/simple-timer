@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
 import ThemeBar from "./components/Themebar";
-import WorkoutPage from "./components/WorkoutPage";
-import Home from "./components/Home";
+import WorkoutPage from "./pages/WorkoutPage";
+import Home from "./pages/Home";
 import Endpoints from "./components/Endpoints";
 import { Auth0Provider } from "@auth0/auth0-react";
 import Auth0ProviderWithHistory from "./auth/auth0Provider";
@@ -15,6 +15,12 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   const [themeColor, setThemeColor] = useState(true);
+
+  useEffect(() => {
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", themeColor ? "dark" : "cupcake");
+  }, [themeColor]);
 
   const theme = createTheme({
     palette: {
@@ -61,17 +67,17 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <CssBaseline enableColorScheme />
+      {/* <ThemeProvider theme={theme}>
+        <CssBaseline enableColorScheme /> */}
 
-        {/* MAIN APP */}
-        <Auth0ProviderWithHistory>
-          <div className="main-app-container">
-            <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
-            <RouterProvider router={router} />
-          </div>
-        </Auth0ProviderWithHistory>
-      </ThemeProvider>
+      {/* MAIN APP */}
+      <Auth0ProviderWithHistory>
+        <div className="main-app-container min-h-screen border-blue-500">
+          <ThemeBar themeColor={themeColor} setThemeColor={setThemeColor} />
+          <RouterProvider router={router} />
+        </div>
+      </Auth0ProviderWithHistory>
+      {/* </ThemeProvider> */}
     </div>
   );
 }

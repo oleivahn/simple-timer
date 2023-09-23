@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import { useAuth0 } from "@auth0/auth0-react";
-import Login from "./Login";
+import Login from "../components/Login";
 import styles from "./Home.module.css";
 
 function Home() {
@@ -12,10 +12,10 @@ function Home() {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className="flex justify-between border-2 border-red-500">
         <h4 style={{ paddingBottom: "20px" }}>
           <Typography variant="h4" gutterBottom>
-            <Link to={`/`}>Home</Link>
+            <Link to={!isAuthenticated ? `/` : `/dashboard`}>Home</Link>
           </Typography>
         </h4>
         <Login />

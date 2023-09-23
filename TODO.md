@@ -4,9 +4,14 @@
 * [ ] Make a full request to mongo and extract the chest and back workout
 
 
+* [ ]  The finish button needs to stop the timer
+
+
+<br>
+<br>
+<br>
 ***
 
-| dsd | sd | ds | sd | dd |
-| --- | --- | --- | --- | --- |
-| d |  |  | a | aa |
-| sd | ds | a | as | d |
+|  |
+| --- |
+|

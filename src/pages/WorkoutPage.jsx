@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import Timer from "./Timer";
-import Questions from "./Questions";
-import StopWatch from "./Stopwatch";
+import Timer from "../components/Timer";
+import WorkoutForm from "../components/WorkoutForm";
+import StopWatch from "../components/Stopwatch";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -18,25 +18,11 @@ const WorkoutPage = () => {
   const [finished, setFinished] = useState(false);
 
   // Authorize user
-
   useEffect(() => {
     const getWorkoutData = async () => {
       const acessToken = await getAccessTokenSilently().then((res) => res);
       console.log("token in useEffect", acessToken);
       console.log("User", await user);
-
-      // try {
-      //   const accessToken = await getAccessTokenSilently({
-      //     authorizationParams: {
-      //       redirect_uri: window.location.origin,
-      //       audience: `http://localhost:5000/api`,
-      //       scope: "read:current_user update:current_user_metadata",
-      //     },
-      //   });
-      // } catch (error) {
-      //   console.log(error.message);
-      //   console.error("Error:", error);
-      // }
 
       const response = await fetch("http://localhost:5000/api", {
         method: "GET",
@@ -52,33 +38,6 @@ const WorkoutPage = () => {
       setData(responseData);
     };
     getWorkoutData();
-
-    // Axios WORKING EXAMPLE
-    // axios
-    //   .get("http://localhost:5000/api")
-    //   .then(function (response) {
-    //     // handle success
-    //     setData(response.data);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   });
-
-    // // Fetch Example
-    // fetch("http://localhost:5000/api", {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setData(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //   });
   }, [getAccessTokenSilently]);
 
   const handlePageNumber = () => {
@@ -133,11 +92,11 @@ const WorkoutPage = () => {
   return (
     <div>
       <p>
-        <Link to={`/dashboard`}>Home</Link>
+        <Link to={`/dashboard`}>Back...</Link>
       </p>
       {data ? (
         <>
-          <Questions data={data} pageNumber={pageNumber} />
+          <WorkoutForm data={data} pageNumber={pageNumber} />
           {/* <StopWatch /> */}
           <Timer
             handlePageNumber={handlePageNumber}
@@ -147,11 +106,17 @@ const WorkoutPage = () => {
             finished={finishedWorkoutHandler}
             roundsToDo={data.length}
           />
+
           <div style={{ marginTop: "25px" }}>
-            <button onClick={finishNowHandler} value="finish-now">
+            <button
+              className="btn btn-wide btn-secondary"
+              onClick={finishNowHandler}
+              value="finish-now"
+            >
               Finish now...
             </button>
           </div>
+
           {finished && <p>CONGRATSSSS</p>}
           {finished && (
             <>

@@ -13,7 +13,10 @@ const ThemeBar = ({ themeColor, setThemeColor }) => {
               id="theme-switch"
               checked={themeColor}
               color="success"
-              onClick={() => setThemeColor(!themeColor)}
+              onClick={() => {
+                console.log("Theme switch clicked");
+                setThemeColor(!themeColor);
+              }}
             />
           }
           label="Theme"
