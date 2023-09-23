@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "./WorkoutForm.css";
 import { Input, Stack, TextField, Typography } from "@mui/material";
 
-const componentName = ({ data, pageNumber }) => {
+const WorkoutForm = ({ data, pageNumber }) => {
   console.log("📗 LOG [ data ]:", data);
   // FIXME: This is where the console error is coming from
   console.log("Check here for the index 0 console error");
@@ -86,10 +86,11 @@ const componentName = ({ data, pageNumber }) => {
                       placeholder={data[round].sets}
                       id="reps"
                       name="reps"
-                      type="text"
+                      type="number"
+                      step="1"
                       autoComplete="reps"
                       required
-                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="input block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -110,13 +111,15 @@ const componentName = ({ data, pageNumber }) => {
                 <div>
                   <div className="mt-2">
                     <input
+                      // style={{ backgroundColor: "red" }}
                       placeholder={data[round].weight}
                       id="weight"
                       name="weight"
-                      type="text"
+                      type="number"
+                      step="5"
                       autoComplete="weight"
                       required
-                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="input block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -136,7 +139,7 @@ const componentName = ({ data, pageNumber }) => {
               <div>
                 <div>
                   <div className="mt-2">
-                    <input
+                    {/* <input
                       placeholder={data[round].typeOfWeight}
                       id="typeOfWeight"
                       name="typeOfWeight"
@@ -144,7 +147,13 @@ const componentName = ({ data, pageNumber }) => {
                       autoComplete="reps"
                       required
                       className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                    /> */}
+                    <select className="select select-bordered w-full max-w-xs">
+                      <option selected>{data[round].typeOfWeight}</option>
+                      <option>Dumbells</option>
+                      <option>Yellow Bands</option>
+                      <option>Blue Bands</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -170,7 +179,7 @@ const componentName = ({ data, pageNumber }) => {
                       type="text"
                       autoComplete="notes"
                       required
-                      className="block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="input block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -189,4 +198,4 @@ const componentName = ({ data, pageNumber }) => {
   );
 };
 
-export default componentName;
+export default WorkoutForm;
