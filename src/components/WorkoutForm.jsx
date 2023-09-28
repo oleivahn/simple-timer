@@ -71,17 +71,16 @@ const WorkoutForm = ({ data, pageNumber }) => {
         <div className="form-container">
           {data[round] && (
             <div className="roundContainer">
-              <div className="left-column ">
-                <label
-                  htmlFor="reps"
-                  className="my-3 block text-sm font-medium leading-6"
-                >
-                  Reps
-                </label>
-              </div>
+              {/* <div className="left-column "></div> */}
               <div>
-                <div>
-                  <div className="mt-2">
+                <div className="container">
+                  <div className="mt-2 flex gap-5">
+                    <label
+                      htmlFor="reps"
+                      className="my-3 block text-sm font-medium leading-6"
+                    >
+                      Reps
+                    </label>
                     <input
                       placeholder={data[round].sets}
                       id="reps"

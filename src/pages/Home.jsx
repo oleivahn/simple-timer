@@ -6,12 +6,14 @@ import Typography from "@mui/material/Typography";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../components/Login";
 import styles from "./Home.module.css";
+import Navbar from "../components/Navbar";
 
 function Home() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   return (
     <>
+      <Navbar />
       <div className="flex justify-between border-2 border-red-500">
         <h4 style={{ paddingBottom: "20px" }}>
           <Typography variant="h4" gutterBottom>

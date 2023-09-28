@@ -2,7 +2,7 @@ const ThemeBar = ({ themeColor, setThemeColor }) => {
   // Return the JSX element
   return (
     <div id="theme-bar">
-      <label className="swap swap-rotate">
+      <label className="swap swap-rotate mt-2">
         {/* this hidden checkbox controls the state */}
         <input
           type="checkbox"
@@ -14,7 +14,7 @@ const ThemeBar = ({ themeColor, setThemeColor }) => {
 
         {/* sun icon */}
         <svg
-          className="swap-on h-10 w-10 fill-current"
+          className="swap-on h-7 w-7 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -23,7 +23,7 @@ const ThemeBar = ({ themeColor, setThemeColor }) => {
 
         {/* moon icon */}
         <svg
-          className="swap-off h-10 w-10 fill-current"
+          className="swap-off m-auto h-5 w-5 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
