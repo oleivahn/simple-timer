@@ -1,23 +1,22 @@
+import { useAuth0 } from "@auth0/auth0-react";
+
 export const DataSource = {
   get: () => {
     return "Hello World";
-    // return Promise.resolve({
-    //   data: [
-    //     { id: 1, name: "John" },
-    //     { id: 2, name: "Jane" },
-    //     { id: 3, name: "Bob" },
-    //   ],
-    // });
   },
-  get2: () => {
-    return "Hello World 2";
+  get2: async (message) => {
+    // const { getAccessTokenSilently, user } = useAuth0();
 
-    // return Promise.resolve({
-    //   data: [
-    //     { id: 1, name: "John" },
-    //     { id: 2, name: "Jane" },
-    //     { id: 3, name: "Bob" },
-    //   ],
-    // });
+    // const acessToken = await getAccessTokenSilently().then((res) => res);
+    // console.log("acessToken", acessToken);
+    return message;
   },
+};
+
+export const FetchWorkout = async (message) => {
+  const { getAccessTokenSilently, user } = useAuth0();
+
+  const acessToken = await getAccessTokenSilently().then((res) => res);
+  console.log("acessToken", acessToken);
+  return message;
 };
