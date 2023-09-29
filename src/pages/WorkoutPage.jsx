@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { DataSource } from "../data/DataSource";
 
 import Timer from "../components/Timer";
 import WorkoutForm from "../components/WorkoutForm";
@@ -16,6 +17,10 @@ const WorkoutPage = () => {
 
   const [pageNumber, setPageNumber] = useState(0);
   const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    console.log(DataSource.get);
+  }, []);
 
   // Authorize user
   useEffect(() => {
