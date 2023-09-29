@@ -23,6 +23,7 @@ function Home() {
         <Login />
       </div>
       <div id="detail">
+        {/* FIXME: What does this do? react-router-dom */}
         <Outlet />
       </div>
       {/* HIDES THESE ROUTES IF NOT LOGGED IN */}

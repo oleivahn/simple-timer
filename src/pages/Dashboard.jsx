@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
 import styles from "./Dashboard.module.css";
+import ExerciseList from "../components/ExerciseList";
 
 function Dashboard() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -36,6 +37,9 @@ function Dashboard() {
               </Link>
             </Typography>
           </h4>
+          <div>
+            <ExerciseList />
+          </div>
         </div>
       )}
     </div>

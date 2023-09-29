@@ -8,7 +8,7 @@ import WorkoutPage from "./pages/WorkoutPage";
 import Home from "./pages/Home";
 import Endpoints from "./components/Endpoints";
 import Auth0ProviderWithHistory from "./auth/auth0Provider";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   // const [themeColor, setThemeColor] = useState(true);
