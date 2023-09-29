@@ -9,19 +9,19 @@ function LogoutButton() {
   return (
     <>
       {!isLoading && user && (
-        <div>
+        <div className="flex">
+          <p className="px-7 py-3 text-base font-medium  hover:text-primary">
+            {user && user.name}
+          </p>
           <button
             id="login-btn"
+            className="px-7 py-3 text-base font-medium  hover:text-primary"
             onClick={() =>
               logout({ logoutParams: { returnTo: window.location.origin } })
             }
           >
             Logout
           </button>
-          <p>User: {user && user.name}</p>
-          {/* <p>{user && JSON.stringify(user, null, 2)}</p> */}
-
-          {/* <p>Status: </p> */}
         </div>
       )}
       {/* <p>Status: {loggedStatus}</p> */}

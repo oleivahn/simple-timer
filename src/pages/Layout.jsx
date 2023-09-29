@@ -4,26 +4,16 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import { useAuth0 } from "@auth0/auth0-react";
-import Login from "../components/Login";
-import styles from "./Home.module.css";
 import Navbar from "../components/Navbar";
 
 function Home() {
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   return (
     <>
       <Navbar />
-      <div className="flex justify-between border-2 border-red-500">
-        <h4 style={{ paddingBottom: "20px" }}>
-          <Typography variant="h4" gutterBottom>
-            <Link to={!isAuthenticated ? `/` : `/dashboard`}>Home</Link>
-          </Typography>
-        </h4>
-        <Login />
-      </div>
       <div id="detail">
-        {/* FIXME: What does this do? react-router-dom */}
+        {/* INFO: Feeds the routes from react-router-dom */}
         <Outlet />
       </div>
       {/* HIDES THESE ROUTES IF NOT LOGGED IN */}

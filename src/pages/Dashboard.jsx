@@ -10,32 +10,24 @@ function Dashboard() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   return (
-    <div className={`${styles.container} ${styles.title}`}>
+    <div className={`${styles.container} ${styles.title} pt-16`}>
       {isAuthenticated && (
         <div className={styles.content}>
-          <Typography variant="body1" gutterBottom>
-            Logged in!!!
-          </Typography>
+          Logged in!!!
           <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`endpoints/`}>
-                Endpoints and examples (Not protected route)
-              </Link>
-            </Typography>
+            <Link to={`endpoints/`}>
+              Endpoints and examples (Not protected route)
+            </Link>
           </h4>
           <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`workout/3`}>
-                Select your dinamic workout (Protected routes)
-              </Link>
-            </Typography>
+            <Link to={`workout/3`}>
+              Select your dinamic workout (Protected routes)
+            </Link>
           </h4>
           <h4>
-            <Typography variant="body1" gutterBottom>
-              <Link to={`workout`}>
-                Select your workout (Protected routes) --- USE THIS ONE
-              </Link>
-            </Typography>
+            <Link to={`workout`}>
+              Select your workout (Protected routes) --- USE THIS ONE
+            </Link>
           </h4>
           <div>
             <ExerciseList />
