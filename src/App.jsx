@@ -7,6 +7,7 @@ import Layout from "./pages/Layout";
 import Endpoints from "./components/Endpoints";
 import Auth0ProviderWithHistory from "./auth/auth0Provider";
 import Dashboard from "./pages/Dashboard";
+import ExerciseList from "./components/ExerciseList";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,8 +28,8 @@ function App() {
           element: <WorkoutPage />,
         },
         {
-          path: "/dashboard/workout/",
-          element: <WorkoutPage />,
+          path: "/dashboard/workouts/",
+          element: <ExerciseList />,
         },
       ],
     },

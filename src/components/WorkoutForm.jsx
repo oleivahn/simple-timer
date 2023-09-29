@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./WorkoutForm.css";
 import { Input, Stack, TextField, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const WorkoutForm = ({ data, pageNumber }) => {
   console.log("📗 LOG [ data ]:", data);
@@ -24,16 +25,22 @@ const WorkoutForm = ({ data, pageNumber }) => {
   }, [pageNumber]);
 
   return (
-    <div className="questions-container border-2 border-slate-100 pb-5">
-      <div className="flex justify-center gap-5 pt-5">
-        <h3>{`Round: ${round + 1}`}</h3>
+    <div className="workouts-container  px-20 pb-5">
+      <div className="flex justify-between gap-5 pt-5">
+        <p>
+          <Link to={`/dashboard/workouts`}>Back...</Link>
+        </p>
+        <h3 className="flex gap-2">
+          {`Round: ${round + 1}`}
+          {data[round] && (
+            <div>
+              <h3> {data[round].exercise}</h3>
+            </div>
+          )}
+        </h3>
+        <p></p>
 
         {/* Exercise Name */}
-        {data[round] && (
-          <div>
-            <h3>{data[round].exercise}</h3>
-          </div>
-        )}
       </div>
 
       {/* {data.map((round, index) => {

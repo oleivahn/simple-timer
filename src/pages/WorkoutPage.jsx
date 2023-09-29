@@ -91,9 +91,6 @@ const WorkoutPage = () => {
 
   return (
     <div>
-      <p>
-        <Link to={`/dashboard`}>Back...</Link>
-      </p>
       {data ? (
         <>
           <WorkoutForm data={data} pageNumber={pageNumber} />
@@ -109,7 +106,7 @@ const WorkoutPage = () => {
 
           <div style={{ marginTop: "25px" }}>
             <button
-              className="btn btn-wide btn-secondary"
+              className="btn btn-secondary btn-wide"
               onClick={finishNowHandler}
               value="finish-now"
             >
@@ -123,7 +120,7 @@ const WorkoutPage = () => {
               <p>{`Summary: ${
                 data
                   ? JSON.stringify(
-                      `${data[0].id} ${data[0].exercise} ... and all the rest`
+                      `${data[0].id} ${data[0].exercise} ... and all the rest`,
                     )
                   : null
               }`}</p>

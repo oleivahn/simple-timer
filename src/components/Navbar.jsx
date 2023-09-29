@@ -63,9 +63,13 @@ const Navbar = () => {
                   </ListItem>
                   {isAuthenticated && (
                     <div className="block lg:flex">
-                      <ListItem NavLink="/dashboard/workout">Workouts</ListItem>
-                      {/* <ListItem NavLink="/#">About</ListItem>
-                      <ListItem NavLink="/#">Blog</ListItem> */}
+                      <ListItem NavLink="/dashboard/workouts">
+                        Workouts
+                      </ListItem>
+                      <ListItem NavLink="/dashboard/endpoints/">
+                        Test Routes
+                      </ListItem>
+                      {/* {/* <ListItem NavLink="/#">About</ListItem> */}
                     </div>
                   )}
                 </ul>

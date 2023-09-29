@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./Dashboard.module.css";
 import ExerciseList from "../components/ExerciseList";
+import DashboardContent from "./DashboardContent";
 
 function Dashboard() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -13,25 +14,7 @@ function Dashboard() {
     <div className={`${styles.container} ${styles.title} pt-16`}>
       {isAuthenticated && (
         <div className={styles.content}>
-          Logged in!!!
-          <h4>
-            <Link to={`endpoints/`}>
-              Endpoints and examples (Not protected route)
-            </Link>
-          </h4>
-          <h4>
-            <Link to={`workout/3`}>
-              Select your dinamic workout (Protected routes)
-            </Link>
-          </h4>
-          <h4>
-            <Link to={`workout`}>
-              Select your workout (Protected routes) --- USE THIS ONE
-            </Link>
-          </h4>
-          <div>
-            <ExerciseList />
-          </div>
+          <DashboardContent />
         </div>
       )}
     </div>
