@@ -35,7 +35,7 @@ function Endpoints() {
   const finishNowHandler = async (e) => {
     console.log(
       "🚀 ~ file: Endpoints.jsx:15 ~ finishNowHandler ~ testData:",
-      testData
+      testData,
     );
     console.log("Finish now...", e.target.value);
 
@@ -64,12 +64,20 @@ function Endpoints() {
       </p>
       <div>Endpoints page</div>
       <div style={{ marginTop: "25px" }}>
-        <button onClick={getFromEndpointHandler} value="get-now">
+        <button
+          className="btn btn-primary"
+          onClick={getFromEndpointHandler}
+          value="get-now"
+        >
           Get...
         </button>
       </div>
       <div style={{ marginTop: "25px" }}>
-        <button onClick={finishNowHandler} value="finish-now">
+        <button
+          className="btn btn-primary"
+          onClick={finishNowHandler}
+          value="finish-now"
+        >
           Post...
         </button>
         <p style={{ marginTop: "25px", color: "orange" }}>

@@ -16,7 +16,7 @@ const Navbar = () => {
 
     document
       .querySelector("html")
-      .setAttribute("data-theme", themeColor ? "dark" : "light");
+      .setAttribute("data-theme", themeColor ? "dark" : "oxTheme");
   }, [themeColor]);
 
   const [open, setOpen] = useState(false);
