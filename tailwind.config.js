@@ -12,7 +12,7 @@ export default {
       "cupcake",
       {
         oxTheme: {
-          primary: "#a7f9c1",
+          primary: "#10468f",
           secondary: "#9792db",
           accent: "#4df9da",
           neutral: "#25242e",
