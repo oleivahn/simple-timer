@@ -13,10 +13,10 @@ export const DataSource = {
   },
 };
 
-export const FetchWorkout = async (message) => {
-  const { getAccessTokenSilently, user } = useAuth0();
+// export const FetchWorkout = async (message) => {
+//   const { getAccessTokenSilently, user } = useAuth0();
 
-  const acessToken = await getAccessTokenSilently().then((res) => res);
-  console.log("acessToken", acessToken);
-  return message;
-};
+//   const acessToken = await getAccessTokenSilently().then((res) => res);
+//   console.log("acessToken", acessToken);
+//   return message;
+// };

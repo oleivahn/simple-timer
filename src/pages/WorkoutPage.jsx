@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { DataSource, FetchWorkout } from "../data/DataSource";
+import { DataSource } from "../data/DataSource";
 import { useParams } from "react-router-dom";
 
 import Timer from "../components/Timer";
@@ -23,7 +23,7 @@ const WorkoutPage = () => {
 
   useEffect(() => {
     console.log("📗 LOG [ id ]:", id);
-    console.log(FetchWorkout("Hello MDFKR"));
+    // console.log(FetchWorkout("Hello MDFKR"));
   }, []);
 
   // Authorize user
