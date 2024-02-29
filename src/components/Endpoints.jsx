@@ -33,14 +33,17 @@ function Endpoints() {
   console.log(test);
 
   const finishNowHandler = async (e) => {
-    console.log(
-      "🚀 ~ file: Endpoints.jsx:15 ~ finishNowHandler ~ testData:",
-      testData,
-    );
+    console.log("🚀 ~ file: Endpoints.jsx:15 ~ finishNowHandler ~ testData:", testData);
     console.log("Finish now...", e.target.value);
 
     const method = "POST";
+    // create a date var with format: MM-DD-YYYY
 
+
+
+    testData.date = (new Date()).toISOString().split('T')[0];
+    console.log("📗 LOG [ testData ]:", testData);
+    
     axios
       .post("http://localhost:5000/workout", testData, {
         "Content-Type": "application/json",

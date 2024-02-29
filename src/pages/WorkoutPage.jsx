@@ -76,8 +76,10 @@ const WorkoutPage = () => {
   // Axios POST Example
   const finishNowHandler = async (e) => {
     const testData = {
-      title: "John Doe",
-      body: 30,
+      user: "John Doe 1",
+      workout: 30,
+      date: (new Date()).toISOString().split('T')[0],
+      values: "some values..."
     };
     console.log("Finish now...", e.target.value);
 
