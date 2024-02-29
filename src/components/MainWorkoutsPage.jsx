@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ExerciseList = () => {
+const MainWorkoutsPage = () => {
   return (
     <section className="pb-12 pt-20 lg:pb-[90px] lg:pt-[60px]">
       <div className="container mx-auto">
@@ -48,7 +48,7 @@ const ExerciseList = () => {
   );
 };
 
-export default ExerciseList;
+export default MainWorkoutsPage;
 
 const ServiceCard = ({ workoutID, number, title, details, goToWorkout }) => {
   return (

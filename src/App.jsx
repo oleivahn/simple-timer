@@ -7,7 +7,7 @@ import Layout from "./pages/Layout";
 import Endpoints from "./components/Endpoints";
 import Auth0ProviderWithHistory from "./auth/auth0Provider";
 import Dashboard from "./pages/Dashboard";
-import ExerciseList from "./components/ExerciseList";
+import MainWorkoutsPage from "./components/MainWorkoutsPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,7 +29,7 @@ function App() {
         },
         {
           path: "/dashboard/workouts/",
-          element: <ExerciseList />,
+          element: <MainWorkoutsPage />,
         },
       ],
     },
